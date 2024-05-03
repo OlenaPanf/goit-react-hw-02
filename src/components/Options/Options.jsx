@@ -1,7 +1,6 @@
 export default function Options ({ updateFeedback, totalFeedback, resetFeedback }) {
     
     return (
-      <>
         <div>
             <button onClick={() => updateFeedback('good')}>Good</button>
             <button onClick={() => updateFeedback('neutral')}>Neutral</button>
@@ -10,6 +9,5 @@ export default function Options ({ updateFeedback, totalFeedback, resetFeedback 
           <button onClick={resetFeedback}>Reset</button>
         )}
         </div>
-      </>
     );
 }
