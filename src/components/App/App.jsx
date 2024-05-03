@@ -22,10 +22,18 @@ export default function App() {
 
   const totalFeedback = feedbackTypes.good + feedbackTypes.neutral + feedbackTypes.bad;
 
+  const resetFeedback = () => {
+    setFeedbackTypes({
+      good: 0,
+      neutral: 0,
+      bad: 0
+    });
+  };
+
   return (
     <>
       <Description />
-      <Options feedbackTypes={feedbackTypes} updateFeedback={updateFeedback} totalFeedback={totalFeedback}/>
+      <Options feedbackTypes={feedbackTypes} updateFeedback={updateFeedback} totalFeedback={totalFeedback} resetFeedback={resetFeedback}/>
       {totalFeedback > 0 ? (
         <Feedback feedbackTypes={feedbackTypes}/>
       ) : (
