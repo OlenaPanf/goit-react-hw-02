@@ -1,4 +1,4 @@
-export default function Options ({ feedbackTypes, updateFeedback, totalFeedback, resetFeedback }) {
+export default function Options ({ updateFeedback, totalFeedback, resetFeedback }) {
     
     return (
       <>
