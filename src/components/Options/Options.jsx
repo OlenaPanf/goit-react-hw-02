@@ -1,12 +1,12 @@
-export default function Options ({ feedbackTypes }) {
+export default function Options ({ feedbackTypes, updateFeedback }) {
     
     return (
-        <>
-            <div>
-                <button>Good: {feedbackTypes.good}</button>
-                <button>Neutral: {feedbackTypes.neutral}</button>
-                <button>Bad: {feedbackTypes.bad}</button>
-            </div>
-        </>
+      <>
+        <div>
+            <button onClick={() => updateFeedback('good')}>Good</button>
+            <button onClick={() => updateFeedback('neutral')}>Neutral</button>
+            <button onClick={() => updateFeedback('bad')}>Bad</button>
+        </div>
+      </>
     );
 }

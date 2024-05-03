@@ -3,6 +3,7 @@ import './App.css'
 import Description from '../Description/Description'
 import Options from '../Options/Options'
 import Feedback from '../Feedback/Feedback'
+import Notification from '../Notification/Notification'
 
 export default function App() {
   
@@ -12,11 +13,24 @@ export default function App() {
     bad: 0
   });
 
+  const updateFeedback = feedbackType => {
+    setFeedbackTypes(prevState => ({
+      ...prevState,
+      [feedbackType]: prevState[feedbackType] + 1
+    }));
+  };
+
+  const totalFeedback = feedbackTypes.good + feedbackTypes.neutral + feedbackTypes.bad;
+
   return (
     <>
       <Description />
-      <Options feedbackTypes={feedbackTypes}/>
-      <Feedback feedbackTypes={feedbackTypes}/>
+      <Options feedbackTypes={feedbackTypes} updateFeedback={updateFeedback} totalFeedback={totalFeedback}/>
+      {totalFeedback > 0 ? (
+        <Feedback feedbackTypes={feedbackTypes}/>
+      ) : (
+        <Notification message="No feedback yet" />
+      )}
     </>
   )
 }
