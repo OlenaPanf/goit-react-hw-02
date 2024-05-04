@@ -32,7 +32,7 @@ export default function App() {
   };
 
   const totalFeedback = feedbackTypes.good + feedbackTypes.neutral + feedbackTypes.bad;
-  const positiveFeedback = Math.round(((feedbackTypes.good + feedbackTypes.neutral) / totalFeedback) * 100);
+  const positiveFeedback = Math.round((feedbackTypes.good / totalFeedback) * 100);
 
   const resetFeedback = () => {
     setFeedbackTypes({
